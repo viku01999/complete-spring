@@ -22,12 +22,7 @@ public class StudentController {
     @PostMapping
     public Student saveStudent(@RequestBody Student student) {
         System.out.println("Received student: " + student);
-
-
-         Student student1 = new Student();
-
-//        student1.setName("Hello");
-
+        //install lambok plugin
         return studService.saveAndUpdateStudent(student);
     }
 
