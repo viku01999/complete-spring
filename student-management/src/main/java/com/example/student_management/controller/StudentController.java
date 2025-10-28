@@ -26,7 +26,7 @@ public class StudentController {
 
          Student student1 = new Student();
 
-//        s.setName("Hello");
+//        student1.setName("Hello");
 
         return studService.saveAndUpdateStudent(student);
     }
