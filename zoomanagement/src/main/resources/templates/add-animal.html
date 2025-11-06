@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Animal</title>
+</head>
+<body>
+<h2>Add New Animal</h2>
+<form th:action="@{/animals}" th:object="${animal}" method="post">
+    <p>Name: <input type="text" th:field="*{name}" required /></p>
+    <p>Species: <input type="text" th:field="*{species}" required /></p>
+    <p>Age: <input type="number" th:field="*{age}" required /></p>
+    <p>
+        Habitat:
+        <select th:field="*{habitat}">
+            <option th:each="h : ${habitats}" th:value="${h}" th:text="${h.name}"></option>
+        </select>
+    </p>
+    <p><button type="submit">Save</button></p>
+</form>
+
+<p><a href="/animals">Back to Animals List</a></p>
+</body>
+</html>

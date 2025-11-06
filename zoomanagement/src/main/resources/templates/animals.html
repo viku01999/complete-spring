@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Animals</title>
+</head>
+<body>
+<h2>Animals List</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Species</th>
+        <th>Age</th>
+        <th>Habitat</th>
+    </tr>
+    <tr th:each="animal : ${animals}">
+        <td th:text="${animal.id}"></td>
+        <td th:text="${animal.name}"></td>
+        <td th:text="${animal.species}"></td>
+        <td th:text="${animal.age}"></td>
+        <td th:text="${animal.habitat != null ? animal.habitat.name : 'Unassigned'}"></td>
+    </tr>
+</table>
+
+<p><a href="/add-animal">Add Another Animal</a></p>
+</body>
+</html>
